@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PP6-eY-h7r">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="H1L-Xp-eLD">
+            <objects>
+                <viewController id="PP6-eY-h7r" customClass="MainViewController" customModule="PhotoPuzzle" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hJH-2g-tjU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phonePuzzleLogo" translatesAutoresizingMaskIntoConstraints="NO" id="v10-Ny-ZH1">
+                                <rect key="frame" x="67" y="50" width="186" height="126"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="v10-Ny-ZH1" secondAttribute="height" multiplier="31:21" id="Ozt-tL-7n8"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Puzzle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O5x-zp-QfV">
+                                <rect key="frame" x="96" y="202" width="128.5" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="turn any photo into a puzzle game" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uU5-iO-c3a">
+                                <rect key="frame" x="30" y="258.5" width="260" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="yLJ-bg-430">
+                                <rect key="frame" x="30" y="448" width="260" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q1M-d2-Arw" customClass="GoldButton" customModule="PhotoPuzzle" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="115" height="100"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="cameraAction:" destination="PP6-eY-h7r" eventType="touchUpInside" id="od8-bT-i6R"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CCh-pk-thq" customClass="GoldButton" customModule="PhotoPuzzle" customModuleProvider="target">
+                                        <rect key="frame" x="145" y="0.0" width="115" height="100"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="browseAction:" destination="PP6-eY-h7r" eventType="touchUpInside" id="9s5-nO-oMg"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="frw-dv-AJP"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JqR-7a-It6" firstAttribute="trailing" secondItem="v10-Ny-ZH1" secondAttribute="trailing" constant="67" id="0FB-9S-XGN"/>
+                            <constraint firstItem="JqR-7a-It6" firstAttribute="trailing" secondItem="uU5-iO-c3a" secondAttribute="trailing" constant="30" id="48t-Ss-PIR"/>
+                            <constraint firstItem="JqR-7a-It6" firstAttribute="bottom" secondItem="yLJ-bg-430" secondAttribute="bottom" constant="20" id="Bcq-xw-dk3"/>
+                            <constraint firstItem="uU5-iO-c3a" firstAttribute="top" secondItem="O5x-zp-QfV" secondAttribute="bottom" constant="30" id="ETC-gN-Bka"/>
+                            <constraint firstItem="uU5-iO-c3a" firstAttribute="leading" secondItem="JqR-7a-It6" secondAttribute="leading" constant="30" id="PN8-Zw-su6"/>
+                            <constraint firstItem="v10-Ny-ZH1" firstAttribute="leading" secondItem="JqR-7a-It6" secondAttribute="leading" constant="67" id="Q5e-am-Nf2"/>
+                            <constraint firstItem="JqR-7a-It6" firstAttribute="trailing" secondItem="yLJ-bg-430" secondAttribute="trailing" constant="30" id="RfU-4e-7h6"/>
+                            <constraint firstItem="v10-Ny-ZH1" firstAttribute="top" secondItem="JqR-7a-It6" secondAttribute="top" constant="30" id="bL9-ct-rWO"/>
+                            <constraint firstItem="O5x-zp-QfV" firstAttribute="centerX" secondItem="v10-Ny-ZH1" secondAttribute="centerX" id="ewn-dN-X23"/>
+                            <constraint firstItem="yLJ-bg-430" firstAttribute="leading" secondItem="JqR-7a-It6" secondAttribute="leading" constant="30" id="nmW-G8-LMA"/>
+                            <constraint firstItem="O5x-zp-QfV" firstAttribute="top" secondItem="v10-Ny-ZH1" secondAttribute="bottom" constant="26" id="ywz-nH-Kna"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="JqR-7a-It6"/>
+                    </view>
+                    <connections>
+                        <outlet property="browseButton" destination="CCh-pk-thq" id="0y8-5n-2rv"/>
+                        <outlet property="logoTitleLabel" destination="O5x-zp-QfV" id="QER-on-kfk"/>
+                        <outlet property="photoButton" destination="q1M-d2-Arw" id="rDC-UM-0kQ"/>
+                        <outlet property="subtitleLabel" destination="uU5-iO-c3a" id="DSe-3G-0Am"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PmT-Cc-7dV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="279.375" y="226.05633802816902"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="phonePuzzleLogo" width="132" height="126"/>
+    </resources>
+</document>

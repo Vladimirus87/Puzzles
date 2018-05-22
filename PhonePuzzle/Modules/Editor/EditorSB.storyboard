@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Eiy-6U-LqM">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Editor View Controller-->
+        <scene sceneID="XNx-Kb-P6q">
+            <objects>
+                <viewController id="Eiy-6U-LqM" customClass="EditorViewController" customModule="PhotoPuzzle" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="m7i-6V-MlV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Tx-of-kM3">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IeT-KJ-4pj">
+                                        <rect key="frame" x="0.0" y="0.0" width="2880" height="1800"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="2880" id="0F2-eh-DXW"/>
+                                            <constraint firstAttribute="height" constant="1800" id="LU8-MO-TEi"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="IeT-KJ-4pj" firstAttribute="top" secondItem="9Tx-of-kM3" secondAttribute="top" id="5qt-WN-5fg"/>
+                                    <constraint firstAttribute="trailing" secondItem="IeT-KJ-4pj" secondAttribute="trailing" id="F9e-TR-fI1"/>
+                                    <constraint firstItem="IeT-KJ-4pj" firstAttribute="leading" secondItem="9Tx-of-kM3" secondAttribute="leading" id="ghJ-lp-Hv5"/>
+                                    <constraint firstAttribute="bottom" secondItem="IeT-KJ-4pj" secondAttribute="bottom" id="zqw-a4-R4Y"/>
+                                </constraints>
+                            </scrollView>
+                            <view userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8eB-7p-10O">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U0l-e6-hNn" customClass="GridView" customModule="PhotoPuzzle" customModuleProvider="target">
+                                <rect key="frame" x="20" y="154" width="280" height="280"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="U0l-e6-hNn" secondAttribute="height" multiplier="1:1" id="QmL-ma-Ig7"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adjust the puzzle image: zoom, rotate, reposition." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FUH-7L-IR6">
+                                <rect key="frame" x="20" y="94" width="281" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="saW-Ga-AVv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bNL-9Q-e7L">
+                                <rect key="frame" x="270" y="30" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="45r-iK-ARU"/>
+                                    <constraint firstAttribute="width" constant="40" id="QxY-by-Nv3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="X">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeButtonAction:" destination="Eiy-6U-LqM" eventType="touchUpInside" id="TUk-h1-gIk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bNR-sf-Rva" customClass="GreenButton" customModule="PhotoPuzzle" customModuleProvider="target">
+                                <rect key="frame" x="110" y="464" width="100" height="74"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="wOJ-DQ-GJo"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="startButtonAction:" destination="Eiy-6U-LqM" eventType="touchUpInside" id="QS6-UG-w2A"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wHP-fQ-yFe" customClass="CounterView" customModule="PhotoPuzzle" customModuleProvider="target">
+                                <rect key="frame" x="10" y="30" width="150" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="XKP-dg-Xu2"/>
+                                    <constraint firstAttribute="height" constant="50" id="vpe-db-t8D"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gg0-g3-7G2" firstAttribute="trailing" secondItem="bNL-9Q-e7L" secondAttribute="trailing" constant="10" id="08x-v6-AWx"/>
+                            <constraint firstItem="wHP-fQ-yFe" firstAttribute="top" secondItem="gg0-g3-7G2" secondAttribute="top" constant="10" id="2fD-bD-R7I"/>
+                            <constraint firstItem="gg0-g3-7G2" firstAttribute="bottom" secondItem="9Tx-of-kM3" secondAttribute="bottom" id="5Oj-vu-9JF"/>
+                            <constraint firstItem="U0l-e6-hNn" firstAttribute="top" secondItem="FUH-7L-IR6" secondAttribute="bottom" constant="20" id="85V-5o-K9g"/>
+                            <constraint firstItem="8eB-7p-10O" firstAttribute="top" secondItem="gg0-g3-7G2" secondAttribute="top" constant="-20" id="9Ez-an-bQH"/>
+                            <constraint firstItem="8eB-7p-10O" firstAttribute="bottom" secondItem="gg0-g3-7G2" secondAttribute="bottom" id="I12-wS-F4p"/>
+                            <constraint firstItem="bNL-9Q-e7L" firstAttribute="top" secondItem="gg0-g3-7G2" secondAttribute="top" constant="10" id="Lgx-7Y-n3O"/>
+                            <constraint firstItem="bNR-sf-Rva" firstAttribute="top" secondItem="U0l-e6-hNn" secondAttribute="bottom" constant="30" id="MVA-s7-BEJ"/>
+                            <constraint firstItem="gg0-g3-7G2" firstAttribute="trailing" secondItem="9Tx-of-kM3" secondAttribute="trailing" id="Rpn-ak-IX0"/>
+                            <constraint firstItem="9Tx-of-kM3" firstAttribute="leading" secondItem="gg0-g3-7G2" secondAttribute="leading" id="Sul-F5-VQd"/>
+                            <constraint firstItem="U0l-e6-hNn" firstAttribute="leading" secondItem="gg0-g3-7G2" secondAttribute="leading" constant="20" id="Uez-EN-vqD"/>
+                            <constraint firstItem="U0l-e6-hNn" firstAttribute="centerY" secondItem="gg0-g3-7G2" secondAttribute="centerY" id="VaT-BW-QdL"/>
+                            <constraint firstItem="9Tx-of-kM3" firstAttribute="top" secondItem="gg0-g3-7G2" secondAttribute="top" constant="-20" id="Zho-FQ-IWZ"/>
+                            <constraint firstItem="bNR-sf-Rva" firstAttribute="centerX" secondItem="gg0-g3-7G2" secondAttribute="centerX" id="aff-qw-zdT"/>
+                            <constraint firstItem="8eB-7p-10O" firstAttribute="trailing" secondItem="gg0-g3-7G2" secondAttribute="trailing" id="faI-OZ-bgi"/>
+                            <constraint firstItem="gg0-g3-7G2" firstAttribute="bottom" secondItem="bNR-sf-Rva" secondAttribute="bottom" constant="30" id="gQm-ad-edW"/>
+                            <constraint firstItem="gg0-g3-7G2" firstAttribute="trailing" secondItem="U0l-e6-hNn" secondAttribute="trailing" constant="20" id="nCK-U1-aqW"/>
+                            <constraint firstItem="U0l-e6-hNn" firstAttribute="centerX" secondItem="gg0-g3-7G2" secondAttribute="centerX" id="rWe-2Y-LhU"/>
+                            <constraint firstItem="8eB-7p-10O" firstAttribute="leading" secondItem="gg0-g3-7G2" secondAttribute="leading" id="soV-0v-lkc"/>
+                            <constraint firstItem="wHP-fQ-yFe" firstAttribute="leading" secondItem="gg0-g3-7G2" secondAttribute="leading" constant="10" id="tZj-pw-QMg"/>
+                            <constraint firstItem="FUH-7L-IR6" firstAttribute="centerX" secondItem="gg0-g3-7G2" secondAttribute="centerX" id="uJO-tf-pws"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gg0-g3-7G2"/>
+                    </view>
+                    <connections>
+                        <outlet property="closeButton" destination="bNL-9Q-e7L" id="flA-sx-2ud"/>
+                        <outlet property="counterView" destination="wHP-fQ-yFe" id="ruA-G0-BrN"/>
+                        <outlet property="coverView" destination="8eB-7p-10O" id="gOR-Wn-kKt"/>
+                        <outlet property="gridView" destination="U0l-e6-hNn" id="ixe-Qd-Ncb"/>
+                        <outlet property="imageView" destination="IeT-KJ-4pj" id="4Po-42-lnC"/>
+                        <outlet property="scrollView" destination="9Tx-of-kM3" id="MkM-P6-PKG"/>
+                        <outlet property="startButton" destination="bNR-sf-Rva" id="Wag-dS-LbP"/>
+                        <outlet property="subtitleLabel" destination="FUH-7L-IR6" id="hWI-xt-BT5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="khO-Pe-PQ7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.25" y="215.49295774647888"/>
+        </scene>
+    </scenes>
+</document>

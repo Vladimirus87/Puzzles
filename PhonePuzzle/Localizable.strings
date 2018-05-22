@@ -1,0 +1,26 @@
+/* 
+  Localizable.strings
+  PhonePuzzle
+
+  Created by moisey on 29.02.2018.
+  Copyright © 2017 moisey. All rights reserved.
+*/
+
+"alert_new_game" = "New Game";
+"alert_correct" = "Correct";
+
+"camera" = "Camera";
+"library" = "Library";
+
+"main_app_name" = "Photo Puzzle";
+"main_message" = "turn any photo into a puzzle game";
+
+"editor_start_button" = "Start";
+"editor_subtitle" = "Adjust the puzzle image: zoom, rotate, reposition.";
+
+"playfield_new_game_button" = "New Game";
+"playfield_preview_button" = "Preview";
+"playfield_puzzle_correct_title" = "WELL DONE!";
+"playfield_puzzle_correct_message" = "The puzzle is correct. Your did it in %@ moves.";
+"playfield_puzzle_incorrect_title" = "NOPE!";
+"playfield_puzzle_incorrect_message" = "The puzzle is incorrect.";

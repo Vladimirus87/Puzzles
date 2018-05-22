@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zta-DL-yG7">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Playfield View Controller-->
+        <scene sceneID="POX-Yt-eKi">
+            <objects>
+                <viewController id="zta-DL-yG7" customClass="PlayfieldViewController" customModule="PhonePuzzle" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dP3-Fj-TlW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OMZ-XX-EN1" customClass="PuzzlePartsCollectionView" customModule="PhonePuzzle" customModuleProvider="target">
+                                <rect key="frame" x="20" y="36" width="280" height="108"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="5" minimumInteritemSpacing="4" id="rWj-8Y-lOR">
+                                    <size key="itemSize" width="80" height="80"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="puzzlePartCell" id="mVD-F2-X94" customClass="PuzzlePartCell" customModule="PhonePuzzle" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="14" width="80" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vaI-p2-fl5">
+                                                    <rect key="frame" x="16" y="16" width="48" height="48"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="vaI-p2-fl5" firstAttribute="top" secondItem="mVD-F2-X94" secondAttribute="topMargin" constant="8" id="FHN-ff-q7e"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="vaI-p2-fl5" secondAttribute="trailing" constant="8" id="KaM-ea-3uA"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="vaI-p2-fl5" secondAttribute="bottom" constant="8" id="SM1-Gi-D13"/>
+                                            <constraint firstItem="vaI-p2-fl5" firstAttribute="leading" secondItem="mVD-F2-X94" secondAttribute="leadingMargin" constant="8" id="kTg-35-AqZ"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="puzzlePartImageView" destination="vaI-p2-fl5" id="7xz-x7-wDg"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uXh-gv-SHj" customClass="GridView" customModule="PhonePuzzle" customModuleProvider="target">
+                                <rect key="frame" x="20" y="154" width="280" height="280"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moves:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="siV-K9-Vlh">
+                                <rect key="frame" x="20" y="454" width="59" height="94"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oGO-gg-nom">
+                                <rect key="frame" x="99" y="454" width="11.5" height="94"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jjm-Se-D20">
+                                <rect key="frame" x="200" y="478" width="100" height="70"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ixt-da-764" customClass="GreenButton" customModule="PhonePuzzle" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="wbz-KH-trz"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="newGameButtonAction:" destination="zta-DL-yG7" eventType="touchUpInside" id="2Pm-g4-xMJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MEM-o7-M0c" customClass="GreenButton" customModule="PhonePuzzle" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="40" width="100" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="b20-CU-uKt"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="previewButtonAction:" destination="zta-DL-yG7" eventType="touchUpInside" id="wXl-zb-ihY"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="9Cv-Gb-KYi"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OMZ-XX-EN1" firstAttribute="top" secondItem="uK2-60-U3G" secondAttribute="top" constant="16" id="23J-q3-Ddn"/>
+                            <constraint firstItem="oGO-gg-nom" firstAttribute="top" secondItem="uXh-gv-SHj" secondAttribute="bottom" constant="20" id="40V-4Z-yQt"/>
+                            <constraint firstItem="uXh-gv-SHj" firstAttribute="centerY" secondItem="uK2-60-U3G" secondAttribute="centerY" id="4bX-md-odS"/>
+                            <constraint firstItem="uK2-60-U3G" firstAttribute="bottom" secondItem="jjm-Se-D20" secondAttribute="bottom" constant="20" id="4ut-wY-geY"/>
+                            <constraint firstItem="uK2-60-U3G" firstAttribute="bottom" secondItem="oGO-gg-nom" secondAttribute="bottom" constant="20" id="6WB-Zc-sbd"/>
+                            <constraint firstItem="uXh-gv-SHj" firstAttribute="leading" secondItem="uK2-60-U3G" secondAttribute="leading" constant="20" id="73Q-a7-2yY"/>
+                            <constraint firstItem="siV-K9-Vlh" firstAttribute="leading" secondItem="uK2-60-U3G" secondAttribute="leading" constant="20" id="CEo-0E-w86"/>
+                            <constraint firstItem="uXh-gv-SHj" firstAttribute="top" secondItem="OMZ-XX-EN1" secondAttribute="bottom" constant="10" id="HNd-eP-laX"/>
+                            <constraint firstItem="uK2-60-U3G" firstAttribute="trailing" secondItem="uXh-gv-SHj" secondAttribute="trailing" constant="20" id="IfP-dj-FxS"/>
+                            <constraint firstItem="uK2-60-U3G" firstAttribute="trailing" secondItem="OMZ-XX-EN1" secondAttribute="trailing" constant="20" id="dHm-1h-YCL"/>
+                            <constraint firstItem="OMZ-XX-EN1" firstAttribute="leading" secondItem="uK2-60-U3G" secondAttribute="leading" constant="20" id="gGd-ez-lyl"/>
+                            <constraint firstItem="oGO-gg-nom" firstAttribute="leading" secondItem="siV-K9-Vlh" secondAttribute="trailing" constant="20" id="nhX-ZT-6aB"/>
+                            <constraint firstItem="siV-K9-Vlh" firstAttribute="top" secondItem="uXh-gv-SHj" secondAttribute="bottom" constant="20" id="rDo-Ak-mLF"/>
+                            <constraint firstItem="uK2-60-U3G" firstAttribute="bottom" secondItem="siV-K9-Vlh" secondAttribute="bottom" constant="20" id="vFW-XM-29Q"/>
+                            <constraint firstItem="uXh-gv-SHj" firstAttribute="width" secondItem="uXh-gv-SHj" secondAttribute="height" multiplier="1:1" id="vef-Mm-otn"/>
+                            <constraint firstItem="uXh-gv-SHj" firstAttribute="centerX" secondItem="uK2-60-U3G" secondAttribute="centerX" id="xRb-ct-4Gm"/>
+                            <constraint firstItem="uK2-60-U3G" firstAttribute="trailing" secondItem="jjm-Se-D20" secondAttribute="trailing" constant="20" id="xrY-iC-RwA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="uK2-60-U3G"/>
+                    </view>
+                    <connections>
+                        <outlet property="gridView" destination="uXh-gv-SHj" id="wVH-VJ-cil"/>
+                        <outlet property="movesLabel" destination="siV-K9-Vlh" id="WW3-1Q-PwK"/>
+                        <outlet property="movesValueLabel" destination="oGO-gg-nom" id="SNc-Up-EDD"/>
+                        <outlet property="newGameButton" destination="ixt-da-764" id="TPv-jr-RaS"/>
+                        <outlet property="partsCollection" destination="OMZ-XX-EN1" id="ykA-kq-x4b"/>
+                        <outlet property="previewButon" destination="MEM-o7-M0c" id="S7f-cN-qrF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cPX-GU-lFO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="339.375" y="301.05633802816902"/>
+        </scene>
+        <!--Preview View Controller-->
+        <scene sceneID="Xcg-3F-8j1">
+            <objects>
+                <viewController storyboardIdentifier="Preview" id="UEO-Bh-lu1" customClass="PreviewViewController" customModule="PhonePuzzle" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HSh-Rs-0qh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hjR-pX-cHg">
+                                <rect key="frame" x="20" y="154" width="280" height="280"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="hjR-pX-cHg" secondAttribute="height" multiplier="1:1" id="jDj-VH-WiX"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zjF-Co-MHh">
+                                <rect key="frame" x="270" y="30" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="62Z-AE-1zP"/>
+                                    <constraint firstAttribute="height" constant="40" id="A7J-Ud-T0d"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="X">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeButtonAction:" destination="UEO-Bh-lu1" eventType="touchUpInside" id="Drc-Tt-GPo"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hjR-pX-cHg" firstAttribute="leading" secondItem="LWc-Pc-3i7" secondAttribute="leading" constant="20" id="1tX-nR-z78"/>
+                            <constraint firstItem="hjR-pX-cHg" firstAttribute="centerX" secondItem="LWc-Pc-3i7" secondAttribute="centerX" id="Ar7-MQ-b96"/>
+                            <constraint firstItem="LWc-Pc-3i7" firstAttribute="trailing" secondItem="zjF-Co-MHh" secondAttribute="trailing" constant="10" id="WBf-53-qdP"/>
+                            <constraint firstItem="LWc-Pc-3i7" firstAttribute="trailing" secondItem="hjR-pX-cHg" secondAttribute="trailing" constant="20" id="n64-BV-jv9"/>
+                            <constraint firstItem="zjF-Co-MHh" firstAttribute="top" secondItem="LWc-Pc-3i7" secondAttribute="top" constant="10" id="r7G-za-o9y"/>
+                            <constraint firstItem="hjR-pX-cHg" firstAttribute="centerY" secondItem="LWc-Pc-3i7" secondAttribute="centerY" id="xNx-Wg-tLz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="LWc-Pc-3i7"/>
+                    </view>
+                    <connections>
+                        <outlet property="closeButton" destination="zjF-Co-MHh" id="EWz-9h-B4o"/>
+                        <outlet property="previewImageView" destination="hjR-pX-cHg" id="Kgs-r9-vah"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iwu-fI-xCk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1071" y="301"/>
+        </scene>
+    </scenes>
+</document>
